@@ -68,7 +68,7 @@ class OverwatchAPI:
     def get_stats_one_hero(self,platform,region,battle_tag,hero):
         return self._base_request(
             platform,region,battle_tag,
-            'hero/' + hero
+            'hero/' + hero + '/'
         )
 
     def get_stats(self,platform,region,battle_tag):
