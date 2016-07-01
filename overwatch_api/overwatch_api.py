@@ -64,6 +64,18 @@ class OverwatchAPI:
             'achievements'
         )
 
+    def get_profile(self,platform,region,battle_tag,mode=None):
+        return self._base_request(
+            platform,region,battle_tag,mode,
+            'profile'
+        )
+
+    def get_stats(self,platform,region,battle_tag,mode):
+        return self._base_request(
+            platform,region,battle_tag,mode,
+            'heroes'
+        )
+
     def get_stats_all_heroes(self,platform,region,battle_tag,mode):
         return self._base_request(
             platform,region,battle_tag,mode,
@@ -74,18 +86,6 @@ class OverwatchAPI:
         return self._base_request(
             platform,region,battle_tag,mode,
             'hero/' + hero + '/'
-        )
-
-    def get_stats(self,platform,region,battle_tag,mode):
-        return self._base_request(
-            platform,region,battle_tag,mode,
-            'heroes'
-        )
-
-    def get_profile(self,platform,region,battle_tag,mode=None):
-        return self._base_request(
-            platform,region,battle_tag,mode,
-            'profile'
         )
 
     def validate_response(self,response):
