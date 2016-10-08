@@ -18,6 +18,7 @@ QUICK = 'quick-play'
 COMP = 'competitive-play'
 
 heroes = {
+    'ANA': 'Ana',
     'BASTION': 'Bastion',
     'DIVA': 'D.Va',
     'GENJI': 'Genji',
