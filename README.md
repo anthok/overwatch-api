@@ -8,8 +8,8 @@ A Lootbox.eu wrapper
     pip install overwatch-api
     
 ## Example Code
-Can be found in tests.py
 
+    python -m unittests -v tests.py
 
 ## Supported calls
 
