@@ -3,7 +3,10 @@ Python Overwatch API
 
 A Lootbox.eu wrapper
 
+## Install
 
+    pip install overwatch-api
+    
 ## Example Code
 Can be found in tests.py
 
