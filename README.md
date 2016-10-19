@@ -9,7 +9,7 @@ A Lootbox.eu wrapper
     
 ## Example Code
 
-    python -m unittests -v tests.py
+    python -m unittest -v tests.py
 
 ## Supported calls
 
