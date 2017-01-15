@@ -57,7 +57,6 @@ class OverwatchAPI:
         self.default_mode = default_mode
 
     def get_patch_notes(self):
-        print('https://api.lootbox.eu/patch_notes')
         r = requests.get('https://api.lootbox.eu/patch_notes')
         self.validate_response(r)
         return r.json()
