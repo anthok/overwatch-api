@@ -1,4 +1,5 @@
 import requests
+import urllib
 
 #REGIONS
 AMERICAS = 'us'
@@ -14,8 +15,8 @@ XBOX = 'xbl'
 PLAYSTATION = 'psn'
 
 #MODES
-QUICK = 'quick-play'
-COMP = 'competitive-play'
+QUICK = 'quickplay'
+COMP = 'competitive'
 
 heroes = {
     'ANA': 'Ana',
@@ -55,14 +56,21 @@ class OverwatchAPI:
         self.default_mode = default_mode
 
     def get_patch_notes(self):
+        print('https://api.lootbox.eu/patch_notes')
         r = requests.get('https://api.lootbox.eu/patch_notes')
         self.validate_response(r)
         return r.json()
 
-    def get_user_achievements(self,platform,region,battle_tag,mode=None):
+    def get_achievements(self,platform,region,battle_tag,mode=None):
         return self._base_request(
             platform,region,battle_tag,mode,
             'achievements'
+        )
+
+    def get_platforms(self,platform,region,battle_tag,mode=None):
+        return self._base_request(
+            platform,region,battle_tag,mode,
+            'get-platforms'
         )
 
     def get_profile(self,platform,region,battle_tag,mode=None):
@@ -71,22 +79,25 @@ class OverwatchAPI:
             'profile'
         )
 
-    def get_stats(self,platform,region,battle_tag,mode):
-        return self._base_request(
-            platform,region,battle_tag,mode,
-            'heroes'
-        )
-
     def get_stats_all_heroes(self,platform,region,battle_tag,mode):
         return self._base_request(
             platform,region,battle_tag,mode,
             'allHeroes/'
         )
 
-    def get_stats_one_hero(self,platform,region,battle_tag,mode,hero):
+    def get_stats_selected_heroes(self,platform,region,battle_tag,mode,heroes):
+        #url encode for comma
+        heroes = '%2C'.join(heroes)
+
         return self._base_request(
             platform,region,battle_tag,mode,
-            'hero/' + hero + '/'
+            'hero/' + heroes + '/'
+        )
+
+    def get_stats_heroes_used(self,platform,region,battle_tag,mode):
+        return self._base_request(
+            platform,region,battle_tag,mode,
+            'heroes'
         )
 
     def validate_response(self,response):
@@ -105,7 +116,6 @@ class OverwatchAPI:
             platform = self.default_plaform
 
         battle_tag = self.sanitize_battletag(battle_tag)
-
         if mode is None:
             r = requests.get(
                 'https://api.lootbox.eu/{platform}/{region}/{battle_tag}/{url}'.format(
