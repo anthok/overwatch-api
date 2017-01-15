@@ -13,7 +13,7 @@ A Lootbox.eu wrapper
 
 ## Supported calls
 
-    from overwatch_api import *
+    from overwatch-api import *
     ow = OverwatchAPI('key')
     ow.get_patch_notes()
     ow.get_achievements(PC,AMERICAS,'elyK-1940')
