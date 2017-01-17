@@ -10,9 +10,9 @@ A Lootbox.eu wrapper
 ## Example Code
 
 ``` bash
-cd overwatch_api
-python -m unittest -v tests.py
+    python setup.py test
 ```
+
 
 ## Supported calls
 
