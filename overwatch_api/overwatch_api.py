@@ -52,7 +52,7 @@ will be required in the future
 
 class OverwatchAPI:
 
-    def __init__(self, key, default_plaform=PC, default_region=AMERICAS, default_mode=QUICK):
+    def __init__(self, key=None, default_plaform=PC, default_region=AMERICAS, default_mode=QUICK):
         self.key = key
         self.default_plaform = default_plaform
         self.default_region = default_region
