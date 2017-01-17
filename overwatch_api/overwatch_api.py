@@ -1,5 +1,4 @@
 import requests
-import urllib
 
 # REGIONS
 AMERICAS = 'us'
