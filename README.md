@@ -7,11 +7,11 @@ A Lootbox.eu wrapper
 
     pip install overwatch-api
 
-## Example Code
+## Testing
 
     python setup.py test
 
-## Supported calls
+## Example Code - Supported calls
 
     from overwatch-api import *
     ow = OverwatchAPI('key')
