@@ -1,0 +1,33 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.12.4]
+    method: GET
+    uri: https://api.lootbox.eu/pc/us/elyK-1940/quickplay/allHeroes/
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA31Ty27bMBD8F50lQ0uJet3iOkmBwmhQB+iZiZmEKUUGIuOiLfrv5RKKRdJCb+Ls
+        aF8z+yfbc8n5jVBMbqX+mQ0ZZHl20FJ/EVIa9yZd6ZCvD6/80YoT/4ApQfj8I0Jd1Tlox0b2zHda
+        cQe1AHnvmddSjI5shVbIhbypeoTVSUxajVxZJj9yNy6wf5dW/JgBoA75xh+1ujJGGIsY/v2ZMynU
+        81wMKM3LunL4vRvqTU+WT3fsuOPGTvoXP87DhZ0Ue22sULdsxARVG40UBwmJhouD0OekpHFHCQNy
+        6JGx409cGbfJeZSkil/20/8o3YUcSaU2JNyLMemkJAOQcMPF1m0IJQ2VXxkeUx3enFJa3YgpzdoM
+        tc8a+ckUVyc+uZUhYyVFEC0Hb4ilgSVGNj4UzxT9SurLpSyEelPXiTZLEPKK0Fj3JdhuoPGaMfsS
+        4nTTx25YQk1edjS1WVCuPudDcg/pEZxjKOMnNh3x27t6z4/Mn0NF4PwsbrX0ziYLpTgI6QoiWjYL
+        unU1fmMPPQqFupnvWmEXK+riXmGAdoAuXT320w3+2PF5J9l8XPRFv0/mwgSJPZNTThySnoc3dL12
+        N8FOV24GbUPXbiks9/cfFn2oZQAFAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 19 Jan 2017 11:14:00 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=15768000]
+      cache-control: [no-cache]
+      content-encoding: [gzip]
+      vary: ['origin,accept-encoding']
+    status: {code: 200, message: OK}
+version: 1

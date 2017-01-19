@@ -1,0 +1,34 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.12.4]
+    method: GET
+    uri: https://api.lootbox.eu/pc/us/elyK-1940/quickplay/hero/Mercy/
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA31U32/bIBD+XyztzY0Mjonjt2RZW2mLOi2T+swc0rARiIB06qr+7+MYVgC7e+S7
+        +7gf3929Flum+5eiey2+CvrCtPnGzEVr1lu2L7qiWRblhOVmq4zl8o6emHNC1bTT6plp+gQe8xmG
+        jz4JfuKSWq6kAR5gtw4Qa6F+A7JwwE4J9ZkLAe8a3kdlzS3XPh9UoqoawHtuwYcQB3zU3PKeCod5
+        YuOwDT258BslIYVFSaq5Ax9+/HTZ8Wc2xGgy9pnpLZcXC6Qqta36/qIptKtYfsjqcbQv/OBJM4yd
+        8ZHRs5IRpa6Bc8+o4PIpZNXism0hg4fDgUnj0loZw42vASMolIlDoIB7uSBNFjhoEYLXSd2pDZeV
+        b16UQupAyrkXPE39Zs0isRsEVUDzdlYz+stb3wscOLgkvshx4GGCnK7Ldwob4iazkv0/0vU/9u/8
+        lEWvUFe10eRluU2ok3q02QRNbMeEORIsEjnjlojgzOG6VejfVo2Su3oAd8OoPcYgmaG42tjkRheN
+        ehWZqw6Tca9jfk0ynaO4ZVXjVMWYOZI/LrRu0/G62pqmDlZfJ8gBP23ZnrrU1lrJP0MnArbjwrGD
+        sgG7U8Kfl6sbvPxhoXoPD+g0tMPfOe97VBftQJDKPCoZzlfSOyiMdP7uwHN3ZtIqCcfMD0bXwGys
+        BTWW6eEe+asYY+M92LDRsUD+q9yQrcGkS9RmlEeObMXb21+17Gw0LQYAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 19 Jan 2017 11:14:22 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=15768000]
+      cache-control: [no-cache]
+      content-encoding: [gzip]
+      vary: ['origin,accept-encoding']
+    status: {code: 200, message: OK}
+version: 1
