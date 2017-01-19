@@ -1,0 +1,29 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.12.4]
+    method: GET
+    uri: https://api.lootbox.eu/pc/us/elyK-1940/profile
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA5VQy07DMBD8FbTnvJsUmiOqeuEjqiVeJVYd27WdlBLl37GTCqpyAZ92Z7wzuzMB
+        Q4dQTzBYMhJ7ghpIXN8gAkEjCairPILWEzb8Og+8OYXiwqUHYFvAHEGjek2OOz7SHbcpgoiyDurN
+        LgIt8ErM4885zPPaO97TnSzk1VOnBmPhQfOH8IM4+pWNBzvntK3T9F18tgw110bFmOAJe+QdSyS5
+        NCyeDlKo5mTT7CMrquz77beHRMv20WsCgzIsU5QvpSdDd+R9+w/DMBLzRkmbWkKrZFysWLkYzrds
+        D2bN+6+yS4JmGTV0QcN+nbTL98dXZRiZ22V2TcoH/gV/wI9W6gEAAA==
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      Date: ['Thu, 19 Jan 2017 11:13:05 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=15768000]
+      cache-control: [no-cache]
+      content-encoding: [gzip]
+      vary: ['origin,accept-encoding']
+    status: {code: 200, message: OK}
+version: 1
