@@ -33,7 +33,7 @@ heroes = {
     'REINHARDT': 'Reinhardt',
     'ROADHOG': 'Roadhog',
     'SOLDIER_76': 'Soldier76',
-    'SOMBRA': "Sombra",
+    # 'SOMBRA': "Sombra",
     'SYMMETRA': 'Symmetra',
     'TORBJOERN': 'Torbjoern',
     'TRACER': 'Tracer',

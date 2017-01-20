@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      User-Agent: [python-requests/2.12.4]
+    method: GET
+    uri: https://api.lootbox.eu/pc/us/elyK-1940/quickplay/heroes
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA73W32/TMBAH8H+lKhJPW2ufff6xPW1sgBBIaJtAGuLBa6wmW+NUbibWTfzvXPYA
+        TnDfmrYPldIq/ciX+979eJkGV/vpyfS6WRWVjycTraZH0/XKbdvq9QsxKZvHuKGLVe2W3ZWybdeb
+        k/n8bvW8LNy6Wsfm2M3cg6tdVRaz4Nv5km46L31s/Ga+qd1qNWdPDC7Zv5e6nK3DsvsrHxc+tK+3
+        5r+P/oK+li66sm+BcSzMZCxsZjRHNBYt48i51AnuC/1w27fxV9veaTJLQxQWGCqJGrmx6bl98OG+
+        OgQNbJYmFACCklJrzg2ATGy3Lm5d34ZiUlfhsfX7f8LyVQUlLGqSKXqzXlEX76L3fZ5UY/Ek5Hmg
+        mNZ0ut2HtdYkwJvoFj4O2nM0IBNZINcaDBAQuZRcM5EAP7998/T+7HRRNYdC6vxD2CGpzlIgMpSy
+        h/z0GB6iawfJYkZ7DDEvFNZwkBY0AtKJYiK88lWg9CuGRhyt1DpvpDME0FqgUaAZT1v5exU2bRMO
+        JtxRZ4oayy21CtBhgki75apxRdksB0I2Wj+zvJBRHKLlFNXWCgm2N0WGQW3H0l1cZHWMphv1sBYg
+        maWRAr0KF82v2j0ME4ePV+SzPFJrY7WyVoLkgrC9VnHrAwLzmc20RBBcKcYFCkqeBPjRhedBGo5W
+        ZJaPGiYVpSBFdjdXhNLptnAx+zYYyHK0qN5RXeBc0KqlAAVKg+lEPnebtvovZMYC8h3HRzzbLTOa
+        dW2c+m592Lq2dQcCQj5iKBwtFZYWLzRMdUtrQjwLw4WLTzZ+0YRi3zwuznfwKJhBG4PUxLTS6JR3
+        08S7+25rUKdxUOfj4733h8oBE831tq59G93YEJ6H/PwDviKzXY8NAAA=
+    headers:
+      Connection: [keep-alive]
+      Content-Type: [text/html; charset=utf-8]
+      Date: ['Thu, 19 Jan 2017 11:13:25 GMT']
+      Server: [nginx]
+      Strict-Transport-Security: [max-age=15768000]
+      cache-control: [no-cache]
+      content-encoding: [gzip]
+      vary: ['origin,accept-encoding']
+    status: {code: 200, message: OK}
+version: 1

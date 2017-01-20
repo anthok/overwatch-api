@@ -7,14 +7,14 @@ A Lootbox.eu wrapper
 
     pip install overwatch-api
 
-## Example Code
+## Testing
 
 ``` bash
-cd overwatch_api
-python -m unittest -v tests.py
+    python setup.py test
 ```
 
-## Supported calls
+
+## Example Code - Supported calls
 
 ``` python
 from overwatch_api import *
