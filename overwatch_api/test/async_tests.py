@@ -25,7 +25,7 @@ class AioTestCase(unittest.TestCase):
             return self._function_cache[item]
         return attr
 
-class aioTestPatchNotes(AioTestCase):
+class TestPatchNotes(AioTestCase):
 
     def setUp(self):
         self.ow = OverwatchAPI('key')
