@@ -5,7 +5,7 @@ EUROPE = "eu"
 KOREA = "kr"
 CHINA = "cn"
 JAPAN = "jp"
-GLOBAL = "global"
+ANY = "any"
 
 # PLATFORMS
 PC = "pc"
