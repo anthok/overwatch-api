@@ -21,7 +21,7 @@ class async_owapi_api(object):
         self.server_url = server_url
         self.default_platform = default_platform
 
-        # If you're and advanced user you maybe, sometime, idk, probably, might want to control these
+        # If you're an advanced user you maybe, sometime, idk, probably, might want to control these
         self._api_version = 3
         self._api_urlpath = "/api/v{0}/u/".format(self._api_version)
 
@@ -46,20 +46,52 @@ class async_owapi_api(object):
         return decorated_func
 
     @_uses_aiohttp_session
-    async def get_full_profile(self, battletag: str, regions=(EUROPE, KOREA, AMERICAS, CHINA, JAPAN, ANY),
+    async def get_profile(self, battletag: str, regions=(EUROPE, KOREA, AMERICAS, CHINA, JAPAN, ANY),
                                platform=None, _session=None):
-        """Returns a dictionary where the keys are the regions that there exists and account for, with corresponding values (stats, achievement, heroes).
-        The regions argument is an iterable of the regions (see constants.py) that the user wants results for (default all regions). If no matching accounts are found, this returns an empty dict.
+        """Returns a dictionary where the keys are the regions that there exists an account for, with corresponding values (stats, achievement, heroes).
+        The regions argument is an iterable of the regions (see constants.py) that the user wants results for (default all regions). If no matching accounts are found for the platform and regions, this returns an empty dict.
         The platforms argument is one of the three platforms in constants.py, and only results from that platforms will be returned, the default is the default of the API instance (see __init__)."""
         if platform is None:
             platform = self.default_platform
         try:
             blob_dict = await self._base_request(battletag, "blob", _session, platform=platform)
-        except ValueError as e:
+        except ProfileNotFoundError as e:
             # The battletag doesn't exist
             blob_dict = {}
         existing_regions = {key: val for key, val in blob_dict.items() if ((val is not None) and (key != "_request"))}
         return {key: val for key, val in existing_regions.items() if key in regions}
+
+    @_uses_aiohttp_session
+    async def get_stats(self, battletag: str, regions=(EUROPE, KOREA, AMERICAS, CHINA, JAPAN, ANY),
+                               platform=None, _session=None):
+        """Returns the stats for the profiles on the specified regions and platform. The format for regions without a matching user, the format is the same as get_profile.
+        The stats are returned in a dictionary with a similar format to what https://github.com/SunDwarf/OWAPI/blob/master/api.md#get-apiv3ubattletagstats specifies."""
+
+        if platform is None:
+            platform = self.default_platform
+        try:
+            blob_dict = await self._base_request(battletag, "stats", _session, platform=platform)
+        except ProfileNotFoundError as e:
+            # The battletag doesn't exist
+            blob_dict = {}
+        existing_regions = {key: val for key, val in blob_dict.items() if ((val is not None) and (key != "_request"))}
+        return {key: [inner_val for inner_key, inner_val in val.items() if inner_key == "stats"][0] for key, val in existing_regions.items() if key in regions}
+
+    @_uses_aiohttp_session
+    async def get_achievements(self, battletag: str, regions=(EUROPE, KOREA, AMERICAS, CHINA, JAPAN, ANY),
+                               platform=None, _session=None):
+        """Returns the achievements for the profiles on the specified regions and platform. Does not return keys for regions that don't have a matching user, the format is the same as get_profile.
+        The achievements are returned in a dictionary with a similar format to what https://github.com/SunDwarf/OWAPI/blob/master/api.md#get-apiv3ubattletagachievements specifies."""
+
+        if platform is None:
+            platform = self.default_platform
+        try:
+            blob_dict = await self._base_request(battletag, "achievements", _session, platform=platform)
+        except ProfileNotFoundError as e:
+            # The battletag doesn't exist
+            blob_dict = {}
+        existing_regions = {key: val for key, val in blob_dict.items() if ((val is not None) and (key != "_request"))}
+        return {key: [inner_val for inner_key, inner_val in val.items() if inner_key == "achievements"][0] for key, val in existing_regions.items() if key in regions}
 
     @staticmethod
     def sanitize_battletag(battle_tag: str) -> str:
