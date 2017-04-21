@@ -93,6 +93,24 @@ class async_owapi_api(object):
         existing_regions = {key: val for key, val in blob_dict.items() if ((val is not None) and (key != "_request"))}
         return {key: [inner_val for inner_key, inner_val in val.items() if inner_key == "achievements"][0] for key, val in existing_regions.items() if key in regions}
 
+    @_uses_aiohttp_session
+    async def get_hero_stats(self, battletag: str, regions=(EUROPE, KOREA, AMERICAS, CHINA, JAPAN, ANY),
+                               platform=None, _session=None):
+        """Returns the hero stats for the profiles on the specified regions and platform. Does not return keys for regions that don't have a matching user, the format is the same as get_profile.
+        The hero stats are returned in a dictionary with a similar format to what https://github.com/SunDwarf/OWAPI/blob/master/api.md#get-apiv3ubattletagheroes specifies."""
+
+        if platform is None:
+            platform = self.default_platform
+        try:
+            blob_dict = await self._base_request(battletag, "heroes", _session, platform=platform)
+        except ProfileNotFoundError as e:
+            # The battletag doesn't exist
+            blob_dict = {}
+        existing_regions = {key: val for key, val in blob_dict.items() if ((val is not None) and (key != "_request"))}
+        return {key: [inner_val for inner_key, inner_val in val.items() if inner_key == "heroes"][0] for key, val in existing_regions.items() if key in regions}
+
+
+    
     @staticmethod
     def sanitize_battletag(battle_tag: str) -> str:
         """In the api, battletags' #:s are replaced with dashes, this method does that."""
