@@ -3,16 +3,16 @@ import asyncio
 import aiohttp
 import async_timeout
 
-from .constants import *
-from .exceptions import *
+from overwatch_api.constants import *
+from overwatch_api.exceptions import *
 
 """The async interface to the OWAPI (https://github.com/SunDwarf/OWAPI) api."""
 
 
 # TODO Handle being ratelimited, asyncio.sleep?
 
-class async_owapi_api(object):
-    """The async client object to use when you want to use the OWAPI api.
+class AsyncOWAPI(object):
+    """The async client objeWct to use when you want to use the OWAPI api.
     All requests throw ConnectionError if they can't connect or similar problem.
     Other exceptions should be reported as bugs if they're raised."""
 
