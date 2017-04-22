@@ -9,7 +9,7 @@ Python Overwatch API
 ### [0.5.0] - 2017-04-21
 #### Changes
 - Now using Async, thanks @Drummersbrother!
-- Moving API provider to OWAPI, thank @Drummersbrother!
+- Moving API provider to OWAPI, thanks @Drummersbrother!
 
 
 ## Example Code - Supported calls
