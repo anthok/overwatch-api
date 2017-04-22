@@ -12,7 +12,7 @@ setup(
       url='http://github.com/anthok/overwatch-api',
       author='Kyle Anthony <anthok>',
       license='MIT',
-      install_requires=['requests'],
+      install_requires=['requests', 'aiohttp', 'async_timeout'],
       test_suite='nose.collector',
-      tests_require=['nose', 'vcrpy'],
+      tests_require=['nose', 'vcrpy', 'asyncio'],
   )
