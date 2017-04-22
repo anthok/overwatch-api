@@ -2,9 +2,11 @@
 Python Overwatch API
 
 ## Install
+Requires Python 3.5 or greater!
 
-    pip install overwatch-api
-
+``` bash
+pip install overwatch-api
+```
 
 ### [0.5.0] - 2017-04-21
 #### Changes
