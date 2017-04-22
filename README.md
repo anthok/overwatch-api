@@ -14,15 +14,31 @@ Python Overwatch API
 
 ## Example Code - Supported calls
 A segment from example_test.py, which can provide more info on how to use the API.
+
+#### Call
 ``` python
+get_profile(self, battletag: str, regions=(EUROPE, KOREA, AMERICAS, CHINA, JAPAN, ANY),
+           platform=None, _session=None, handle_ratelimit=None, max_tries=None, request_timeout=None)
+
+
+#Platform defaults to PC if not specified.  
+#Session can be passed through for a custom aiohttp.Client.
+client.get_profile("Danielfrogs#2552")
+```
+
+
+
+#### Code
+``` python
+import asyncio, aiohttp
 from overwatch_api.core import AsyncOWAPI
 from overwatch_api.constants import *
 
 client = AsyncOWAPI()
-client.get_profile("Danielfrogs#2552", session=session, platform=PC)
-client.get_stats("Danielfrogs#2552", session=session, platform=PC)
-client.get_achievements("Danielfrogs#2552", session=session, platform=PC)
-client.get_hero_stats("Danielfrogs#2552", session=session, platform=PC)
+await client.get_profile("Danielfrogs#2552", platform=PC)
+await client.get_stats("Danielfrogs#2552", platform=XBOX)
+await client.get_achievements("Danielfrogs#2552", platform=PLAYSTATION)
+await client.get_hero_stats("Danielfrogs#2552")
 ```
 
 
